@@ -35,3 +35,9 @@ print('Test features completed. Evaluating model')
 #Evaluate model
 evaluationResult = model.score(testFeatures, y_test)
 print('Model evaluation result: ' + str(evaluationResult))
+
+#Percent representation
+evaluationPercent = round(evaluationResult * 100, 3)
+print('Model scored ' + str(evaluationPercent) + '% accuracy')
+
+print('Script completed.')
