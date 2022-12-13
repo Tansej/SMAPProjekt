@@ -25,5 +25,13 @@ print('Features created.')
 
 #Define model and fit with features and training mail status
 model = svm.SVC()
-model.fit(features,y_train)
+model.fit(features, y_train)
 print('Model fit complete.')
+
+#Create test features from test data to verify model accuracy
+testFeatures = countVectorizer.transform(x_test)
+print('Test features completed. Evaluating model')
+
+#Evaluate model
+evaluationResult = model.score(testFeatures, y_test)
+print('Model evaluation result: ' + str(evaluationResult))
