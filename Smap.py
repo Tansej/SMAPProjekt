@@ -17,3 +17,13 @@ y = mails['status']
 print('Splitting training and testing data.')
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size = 0.25)
 print('Split complete!')
+
+#Define countVectorizer and transform train data to features
+countVectorizer = CountVectorizer()
+features = countVectorizer.fit_transform(x_train)
+print('Features created.')
+
+#Define model and fit with features and training mail status
+model = svm.SVC()
+model.fit(features,y_train)
+print('Model fit complete.')
